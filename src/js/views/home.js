@@ -4,7 +4,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 
 export const Home = () => (
-	<div className="d-flex flex-column text-center mt-5">
+	<div className="d-flex flex-column text-center mt-5 pt-5">
 		<Link to="/StarWarsPrincipal">
 			<button className='btn btn-success mb-2'>STAR WARS</button>
 		</Link>
