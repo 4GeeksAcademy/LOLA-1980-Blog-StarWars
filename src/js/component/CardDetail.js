@@ -14,7 +14,14 @@ const CardDetail = ({ detail, id, category }) => {
 
     return (
         <div className="card-name container d-flex justify-content-around align-items-center mt-5">
-            <img src={imageUrl} alt={detail.name} /> {/* Utilizamos la URL de la imagen aquí */}
+            <img src={imageUrl} alt={detail.name}
+                onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                    e.target.style.height = "400px";
+                    e.target.style.widht = "250px";
+                }}
+            /> {/* Utilizamos la URL de la imagen aquí */}
             <div>
                 <h2>Name: {detail.name}</h2>
                 <ul className="list-group list-unstyled">
