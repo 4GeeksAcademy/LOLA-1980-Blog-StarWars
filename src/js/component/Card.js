@@ -10,7 +10,7 @@ const Card = ({ uid, category, name, imageUrl, imageHeight }) => {
 
     const handleAddFavorite = () => {
         actions.addFavorite(name); // Agregar el nombre del item a la lista de favoritos
-        actions.incrementLikes(); // Incrementar el contador de likes
+        // actions.incrementLikes(); // Incrementar el contador de likes
     };
 
 
@@ -28,11 +28,12 @@ const Card = ({ uid, category, name, imageUrl, imageHeight }) => {
             <div className="card-body">
                 <h5 className="card-title card-name">{name}</h5>
                 <div className='d-flex justify-content-between'>
-                    <Link to={`/StarWarsDetails/${category}/${uid}`}>
-                        <a href="#" className="btn btn-outline-primary">Learn more!</a>
+                    <Link className="btn btn-outline-primary" to={`/StarWarsDetails/${category}/${uid}`}>
+                        Learn more!
                     </Link>
                     <div>
-                        <FontAwesomeIcon icon={faHeart} className="fa-regular btn btn-outline-warning fs-5 p-2" onClick={handleAddFavorite} /> {/* Manejar el clic en el ícono de corazón */}
+                        <i className={`btn btn-outline-warning fs-5 p-2 ${store.favoritos.find(favorito => favorito == name) ? 'fa-solid' : 'fa-regular'} fa-heart`} onClick={handleAddFavorite}></i>
+                        {/* <FontAwesomeIcon icon="fa-regular fa-heart" className="fa-regular btn btn-outline-warning fs-5 p-2" onClick={handleAddFavorite} /> Manejar el clic en el ícono de corazón */}
                     </div>
                 </div>
             </div>

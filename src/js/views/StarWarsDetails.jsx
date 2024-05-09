@@ -7,20 +7,14 @@ export const StarWarsDetails = () => {
     const { id, category } = useParams();
     console.log(id, category);
 
-    // Función para generar la URL según la categoría
-    //const generateUrl = (category) => `https://www.swapi.tech/api/${category}/${id}`;
-
-    // Realizar llamadas de fetch según la categoría
-    //const planetDetail = category === "planets" ? FetchDataDetails(generateUrl("planets")) : null;
-    //const personDetail = category === "people" ? FetchDataDetails(generateUrl("people")) : null;
-    //const starshipDetail = category === "starships" ? FetchDataDetails(generateUrl("starships")) : null;
-
 
     // Función para generar la URL según la categoría
     const generateUrl = (category) => `https://www.swapi.tech/api/${category}/${id}`;
 
+
     // Realizar llamadas de fetch según la categoría
     const detailData = FetchDataDetails(generateUrl(category));
+    console.log(detailData);
 
     // Función para obtener los detalles según la categoría
     const getDetailComponent = () => {
@@ -37,6 +31,21 @@ export const StarWarsDetails = () => {
                 return null;
         }
     };
+
+
+    /* Función para generar la URL de la imagen según la categoría
+    const generateImageUrl = (category, id) => `https://starwars-visualguide.com/assets/img/${category}/${id}.jpg`;
+
+    // Realizar llamadas de fetch según la categoría
+    const detailData = FetchDataDetails(`https://www.swapi.tech/api/${category}/${id}`);
+
+    // Función para obtener los detalles según la categoría
+    const getDetailComponent = () => {
+        if (!detailData) return null;
+
+        return <CardDetail detail={detailData.properties} id={id} category={category} imageUrl={generateImageUrl(category, id)} />;
+    };*/
+
 
     // Función para capitalizar la primera letra de una palabra
     const capitalizaFirstLetter = (string) => {
@@ -67,7 +76,13 @@ export const StarWarsDetails = () => {
 
 
 
+// Función para generar la URL según la categoría
+//const generateUrl = (category) => `https://www.swapi.tech/api/${category}/${id}`;
 
+// Realizar llamadas de fetch según la categoría
+//const planetDetail = category === "planets" ? FetchDataDetails(generateUrl("planets")) : null;
+//const personDetail = category === "people" ? FetchDataDetails(generateUrl("people")) : null;
+//const starshipDetail = category === "starships" ? FetchDataDetails(generateUrl("starships")) : null;
 
 
 

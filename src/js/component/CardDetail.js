@@ -8,9 +8,10 @@ const CardDetail = ({ detail, id, category }) => {
     const filteredProperties = Object.entries(detail).filter(([key, value]) => value !== null && value !== "");
 
     // Construir la URL de la imagen
-    const imageUrl = `https://starwars-visualguide.com/assets/img/${category}/${id}.jpg`;
+    const imageUrl = `https://starwars-visualguide.com/assets/img/${category == "people" ? "characters" : category}/${id}.jpg`;
     const propertiesToExclude = ['created', 'edited', 'homeworld', 'name', 'url', 'pilots'];
-    console.log(detail)
+
+
     return (
         <div className="card-name container d-flex justify-content-around align-items-center mt-5">
             <img src={imageUrl} alt={detail.name} /> {/* Utilizamos la URL de la imagen aquí */}

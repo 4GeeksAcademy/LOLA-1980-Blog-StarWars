@@ -15,12 +15,13 @@ export const Navbar = () => {
 
 
 	return (
-		<nav className="navbar navbar-dark bg-black container fixed-top mb-3">
-			<Link to="/">
-				<img src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254" style={{ width: "120px", height: "60px" }} />
-			</Link>
-			<div className="ml-auto">
-				<Link to="/StarWarsPrincipal">
+		<div>
+			<nav className="navbar navbar-dark bg-black container fixed-top mb-3">
+				<Link to="/">
+					<img src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254" style={{ width: "120px", height: "60px" }} />
+				</Link>
+				<div className="ml-auto">
+
 					<div className="nav-item dropdown">
 						<a className="nav-link text-white dropdown-toggle btn btn-primary" href="#" id="navbarDropdown"
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -35,8 +36,10 @@ export const Navbar = () => {
 							))}
 						</ul>
 					</div>
-				</Link>
-			</div>
-		</nav>
+
+				</div>
+			</nav>
+		</div>
+
 	);
 };

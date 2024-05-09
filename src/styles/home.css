@@ -5,3 +5,11 @@
 .card-name {
     color: #f8f8f8;
 }
+.nav-name {
+    color: #FFEFBD;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #FFEFBD;
+    padding-bottom: 5px;
+}
